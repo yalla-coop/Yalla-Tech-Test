@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ThemeProvider } from '@emotion/react';
 import { Global } from '@emotion/react';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 import Pages from './pages';
 import theme, { globalStyle } from './theme';
 import { Route } from './components';
@@ -30,17 +30,10 @@ function App() {
               path="/"
               isLoggedIn={isLoggedIn}
               isMounted={isMounted}
-              Component={Pages.Example}
-              layout="home"
-            />
-            <Route
-              exact
-              path={navRoutes.KATAS}
-              isLoggedIn={isLoggedIn}
-              isMounted={isMounted}
               Component={Pages.Katas}
               layout="general"
             />
+
             <Route
               exact
               path={navRoutes.KATA}
@@ -49,6 +42,7 @@ function App() {
               Component={Pages.Kata}
               layout="general"
             />
+            <Route path="/">{<Redirect to="/" />}</Route>
           </Switch>
         </Router>
       </ThemeProvider>

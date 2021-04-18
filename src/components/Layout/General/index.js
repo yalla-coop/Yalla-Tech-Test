@@ -6,9 +6,7 @@ import * as S from './style';
 const General = ({ children, ...props }) => {
   return (
     <>
-      <header>header</header>
       <S.Main>{children}</S.Main>
-      <footer>footer</footer>
     </>
   );
 };
