@@ -59,7 +59,8 @@ const WillYouMakeIt = () => {
       <Row mb="3">
         <Col w={[4, 12, 12]}>
           <T.P color="white">
-            to start solve this kata go to src/functions/will-you-make-It
+            to start solve this kata go to{' '}
+            <S.InlineP keyboard> src/functions/will-you-make-It</S.InlineP>
           </T.P>
         </Col>
       </Row>

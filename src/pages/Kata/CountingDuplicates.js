@@ -17,9 +17,10 @@ import 'prismjs/components/prism-regex';
 
 import test from '../../helpers/test';
 
-const exampleContent = `\nstrarr = [\"tree\", \"foling\", \"trashy\", \"blue\", \"abcdef\", \"uvwxyz\"], k = 2\n\nConcatenate the consecutive strings of strarr by 2, we get:\n\ntreefoling   (length 10)  concatenation of strarr[0] and strarr[1]\nfolingtrashy (\"      12)  concatenation of strarr[1] and strarr[2]\ntrashyblue   (\"      10)  concatenation of strarr[2] and strarr[3]\nblueabcdef   (\"      10)  concatenation of strarr[3] and strarr[4]\nabcdefuvwxyz (\"      12)  concatenation of strarr[4] and strarr[5]\n\nTwo strings are the longest: \"folingtrashy\" and \"abcdefuvwxyz\".\nThe first that came is \"folingtrashy\" so \nlongest_consec(strarr, 2) should return \"folingtrashy\".\n\nIn the same way:\nlongest_consec([\"zone\", \"abigail\", \"theta\", \"form\", \"libe\", \"zas\", \"theta\", \"abigail\"], 2) --> \"abigailtheta\"\n`;
+const exampleContent =
+  "\n\"abcde\" -> 0              no characters repeats more than once  \n\"aabbcde\" -> 2            'a' and 'b'  \n\"aabBcde\" -> 2            'a' occurs twice and 'b' twice (b and B)  \n\"indivisibility\" -> 1     'i' occurs six times  \n\"Indivisibilities\" -> 2   'i' occurs seven times and 's' occurs twice  \n\"aA11\" -> 2               'a' and '1'  \n\"ABBA\" -> 2               'A' and 'B' each occur twice\n";
 
-const ConsecutiveStrings = () => {
+const CountingDuplicates = () => {
   const ResultRef = useRef();
   const [results, setResults] = useState([]);
   const { pathname } = useLocation();
@@ -37,18 +38,15 @@ const ConsecutiveStrings = () => {
     <>
       <Row>
         <Col w={[4, 12, 12]}>
+          <T.H2 strong color="white">
+            Count the number of Duplicates
+          </T.H2>
           <S.InlineP color="white">
-            You are given an array(list) <S.InlineP keyboard>strarr</S.InlineP>{' '}
-            of strings and an integer <S.InlineP keyboard>k</S.InlineP>. Your
-            task is to return the{' '}
-            <S.InlineP color="green" strong mark>
-              first
-            </S.InlineP>{' '}
-            longest string consisting of k{' '}
-            <S.InlineP strong mark>
-              consecutive
-            </S.InlineP>{' '}
-            strings taken in the array.
+            Write a function that will return the count of{' '}
+            <S.InlineP keyboard> distinct case-insensitive </S.InlineP>{' '}
+            alphabetic characters and numeric digits that occur more than once
+            in the input string. The input string can be assumed to contain only
+            alphabets (both uppercase and lowercase) and numeric digits.
           </S.InlineP>
         </Col>
       </Row>
@@ -69,12 +67,6 @@ const ConsecutiveStrings = () => {
             padding={10}
           />
         </Col>
-        <Col w={[4, 12, 12]}>
-          <T.P ml="2" mt="5" color="white">
-            n being the length of the string array, if n = 0 or k &gt; n or k
-            &lt;= 0 return "".
-          </T.P>
-        </Col>
       </Row>
       <Row mt="5" mb="2">
         <Col w={[4, 12, 12]}>
@@ -86,14 +78,8 @@ const ConsecutiveStrings = () => {
       <Row mb="3">
         <Col w={[4, 12, 12]}>
           <T.P color="white">
-            consecutive strings : follow one after another without an
-            interruption
-          </T.P>
-        </Col>{' '}
-        <Col w={[4, 12, 12]}>
-          <T.P color="white">
-            to start solve this kata go to{' '}
-            <S.InlineP keyboard>src/functions/consecutive-strings</S.InlineP>
+            to start solve this kata go to
+            <S.InlineP keyboard> src/functions/counting-duplicates</S.InlineP>
           </T.P>
         </Col>
       </Row>
@@ -117,4 +103,4 @@ const ConsecutiveStrings = () => {
   );
 };
 
-export default ConsecutiveStrings;
+export default CountingDuplicates;
