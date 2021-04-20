@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import * as T from '../Typography';
 
 export const Container = styled.div`
-  border: 1px solid red;
+  border: solid;
   width: 100%;
   border-radius: 15px;
   display: flex;

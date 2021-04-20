@@ -14,7 +14,7 @@ const KataCard = (props) => {
     bgColor = 'darkBlue';
   }
   return (
-    <S.Container bgColor={bgColor}>
+    <S.Container bgColor={bgColor} {...props}>
       <T.H1 weight="bold">{props.name}</T.H1>
       <T.H4
         color="pink"
