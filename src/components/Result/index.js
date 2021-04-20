@@ -41,13 +41,14 @@ const Result = ({ results }) => {
         <T.H2 strong>Result</T.H2>
       </S.Title>
       <S.Ul>
-        {results.map(({ passed, expected, got }) =>
+        {results.map(({ passed, expected, got }, i) =>
           passed ? (
-            <Passed expected={JSON.stringify(expected)} />
+            <Passed expected={JSON.stringify(expected)} key={i} />
           ) : (
             <NotPassed
               expected={JSON.stringify(expected)}
               got={JSON.stringify(got)}
+              key={i}
             />
           )
         )}

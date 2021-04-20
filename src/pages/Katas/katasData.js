@@ -23,6 +23,12 @@ const katasInfo = [
     level: 7,
     isDone: false,
   },
+  {
+    id: 5,
+    name: 'Pascal to Snake',
+    level: 5,
+    isDone: false,
+  },
 ];
 
 export default katasInfo;
