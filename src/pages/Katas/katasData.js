@@ -17,6 +17,12 @@ const katasInfo = [
     level: 6,
     isDone: false,
   },
+  {
+    id: 4,
+    name: 'largest 5 digit number',
+    level: 7,
+    isDone: false,
+  },
 ];
 
 export default katasInfo;

@@ -27,7 +27,7 @@ const WillYouMakeIt = () => {
     <>
       <Row jc="center">
         <Col w={[4, 4, 4]}>
-          <T.H1 strong color="red">
+          <T.H1 strong color="red" mb="5">
             Will you make it?{' '}
           </T.H1>
         </Col>
