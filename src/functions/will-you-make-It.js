@@ -1,6 +1,6 @@
 const willYouMakeIt = ({ distanceToPump, mpg, fuelLeft }) => {
   //todo
-  return distanceToPump / fuelLeft <= mpg;
+  return;
 };
 
 export default willYouMakeIt;
